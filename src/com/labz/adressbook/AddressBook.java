@@ -9,7 +9,7 @@ public class AddressBook {
 	ContactPerson person = new ContactPerson();
 	Scanner sc = new Scanner(System.in);
 	
-	public void AddContact() {
+	public void addContact() {
 		System.out.println("Enter number of contacts you need to create :");
 		int n = sc.nextInt();
 		for(int i = 0; i < n; i++) {
@@ -62,9 +62,14 @@ public class AddressBook {
 		}
 	}
 	
-	public static void main(String[] args) {
-		AddressBook addressBook = new AddressBook();
-		addressBook.AddContact();
-		addressBook.editContact();
+	public void deleteContact() {
+		System.out.println("Enter the name of the person to delete the contact :");
+		String deleteName = sc.next();
+		for(int i = 0; i< list.size(); i++) {
+			String name = list.get(i).getFirstName();
+			if(name.equalsIgnoreCase(deleteName)) {
+				list.remove(i);
+			}
+		}
 	}
 }
