@@ -86,4 +86,28 @@ public class AddressBook {
 	            System.out.println("Name does not exit");
 		 }
 	}
+	
+	public void choice() {	
+		 boolean status = true; 
+		 do {
+			System.out.println("Enter \n 1 To add The contact \n 2 To edit the contact \n 3 To delete the contact \n 4 to exit");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    editContact();
+                    break;
+                case 3:
+                    deleteContact();
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    status = false;
+            }
+		}while(status);
+	}
 }
