@@ -1,9 +1,14 @@
 package com.labz.adressbook;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+
+import javax.swing.text.Keymap;
 
 public class AddressBook {
 	List<ContactPerson> list = new ArrayList<ContactPerson>();
@@ -164,5 +169,12 @@ public class AddressBook {
             result.count++;
         });
         System.out.println("Number of contact persons in "+nameCityState+" is : "+result.count);
+    }
+    
+    public void sortByName() {
+    	List<ContactPerson> result  = list.stream().sorted(Comparator.comparing(ContactPerson::getFirstName)).collect(Collectors.toList());
+    	for(ContactPerson contact: result){
+            System.out.println(contact.toString());
+        }
     }
 }

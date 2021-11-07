@@ -1,8 +1,12 @@
 package com.labz.adressbook;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class MultipleAddressBook {
 	Map<String, AddressBook> map = new HashMap<>();
@@ -57,6 +61,9 @@ public class MultipleAddressBook {
                     case 7:
                     	map.get(bookName).countList();
                         break;
+                    case 8:
+                    	map.get(bookName).sortByName();
+                        break;
                     default:
                         System.out.println("Entered choice is incorrect!.. please enter correct choice");
                         break;
@@ -98,13 +105,14 @@ public class MultipleAddressBook {
         }
     }
 
-   public void searchPersonByCity() {
+   public void searchPersonByCity(String cityName) {
         // Search person by their  city
         for (Map.Entry<String, AddressBook> entry : map.entrySet()) {
         	AddressBook value = entry.getValue();
             System.out.println("The Address Book: " + entry.getKey());
-            System.out.println(entry.getValue().list);
+            value.getPersonNameByCity(cityName);
         }
     }
+   
 
 }

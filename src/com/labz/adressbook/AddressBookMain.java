@@ -31,12 +31,12 @@ public class AddressBookMain {
                 case 6:
                     System.out.println("Enter Name of City: ");
                     String cityName = scanner.next();
-                    multiAddressBook.searchPersonByCity();
+                    multiAddressBook.searchPersonByCity(cityName);
                     break;
                 case 7: 
                     System.out.println("Enter Name of State: ");
                     String stateName = scanner.next();
-                    multiAddressBook.searchPersonByCity();
+                    multiAddressBook.searchPersonByState(stateName);
                     break;
                 case 0:
                     System.exit(0);
