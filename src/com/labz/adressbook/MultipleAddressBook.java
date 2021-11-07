@@ -54,6 +54,9 @@ public class MultipleAddressBook {
                     case 6:
                     	map.get(bookName).contactBystate();
                         break;
+                    case 7:
+                    	map.get(bookName).countList();
+                        break;
                     default:
                         System.out.println("Entered choice is incorrect!.. please enter correct choice");
                         break;
