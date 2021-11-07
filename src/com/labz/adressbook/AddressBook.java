@@ -122,7 +122,24 @@ public class AddressBook {
 		 }
 	}
 
-	
+	 public void contactBycity() {
+	        System.out.println("Enter Name of City to get Contact List : ");
+	        String city = sc.next();
+	            System.out.print("\nContact list of persons across '"+city+"' is");
+	            list.stream().filter(contactList -> contactList.getCity().equals(city)||contactList.getState().equals(nameCityState)).forEach(contactList -> {
+	                System.out.println(contactList.getFirstName()+" "+contactList.getLastName());
+	            });
+	    }
+	 
+	 public void contactBystate() {
+	        System.out.println("Enter Name of State to get Contact List : ");
+	        String state = sc.next();
+	            System.out.print("\nContact list of persons across '"+state+"' is");
+	            list.stream().filter(contactList -> contactList.getCity().equals(state)||contactList.getState().equals(nameCityState)).forEach(contactList -> {
+	                System.out.println(contactList.getFirstName()+" "+contactList.getLastName());
+	            });
+	    }
+	 
 	public void getPersonNameByState(String State) {
         List<ContactPerson> result  = list.stream().filter(p ->p.getState().equals(State)).collect(Collectors.toList());
         for(ContactPerson contact: result){

@@ -32,7 +32,8 @@ public class MultipleAddressBook {
         if (map.containsKey(bookName)) {
             map.get(bookName);
             System.out.println("Enter book is present choose the options below to do certain function");
-                System.out.println("Enter\n 1. add Contact\n 2. edit contact\n 3. delete contact\n 4. print contact");
+               System.out.println("Enter\n 1. add Contact\n 2. edit contact\n 3. delete contact\n 4. print contact\n" +
+            "5.To contact person by city\n 6.To contact person by state");
                 int choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
@@ -46,6 +47,12 @@ public class MultipleAddressBook {
                         break;
                     case 4:
                         map.get(bookName).printContact();
+                        break;
+                    case 5:
+                    	map.get(bookName).contactBycity();
+                        break;
+                    case 6:
+                    	map.get(bookName).contactBystate();
                         break;
                     default:
                         System.out.println("Entered choice is incorrect!.. please enter correct choice");
