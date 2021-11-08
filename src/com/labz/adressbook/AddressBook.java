@@ -37,8 +37,6 @@ public class AddressBook {
 			String lastName=scan.next();
 			person.setLastName(lastName);
 
-
-        // Ensuring there is no Duplicate Entry of the same Person in a Address Book
 			try {
 				personList.stream().filter(contactList -> contactList.getFirstName().equals(firstName)&&contactList.getLastName().equals(lastName)).forEach(contactList -> {
 					System.out.println("Can not allow Duplicate Contact");
@@ -78,7 +76,6 @@ public class AddressBook {
 		}		
     }
 
-    
     private int searchName() {
         System.out.println("\nEnter the First name of person: ");
         String searchName=scan.next();
@@ -92,7 +89,6 @@ public class AddressBook {
         return personList.size();
     }
 
-   
    public void editDetails() {
         int index = searchName();
         if (index!=personList.size()) {
@@ -168,7 +164,6 @@ public class AddressBook {
         }
     }
 
-    
     public void contactBycity() {
         System.out.println("Enter Name of City or State to get Contact List : ");
         String nameCityState = scan.next();
@@ -182,7 +177,6 @@ public class AddressBook {
         }
     }
 
-    
     public void displayContacts() {
         try {
             System.out.println("\nContacts in AddessBook:");
@@ -194,7 +188,6 @@ public class AddressBook {
         }
     }
 
-    
     public void contactsCount() {
         System.out.println("Enter Name of City or State to get count of Contacts across city or state");
         String nameCityState = scan.next();
@@ -204,7 +197,6 @@ public class AddressBook {
         });
         System.out.println("Number of contact persons in "+nameCityState+" is : "+wrapper.count);
     }
-    
     
     public void sorting() {
      Scanner sc=new Scanner(System.in);
